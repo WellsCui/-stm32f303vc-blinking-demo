@@ -105,6 +105,16 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+    
+    HAL_Delay(1000);
+    HAL_GPIO_TogglePin(GPIOE, LD3_Pin);
+    HAL_GPIO_TogglePin(GPIOE, LD4_Pin);
+    HAL_GPIO_TogglePin(GPIOE, LD5_Pin);
+    HAL_GPIO_TogglePin(GPIOE, LD6_Pin);
+    HAL_GPIO_TogglePin(GPIOE, LD7_Pin);
+    HAL_GPIO_TogglePin(GPIOE, LD8_Pin);
+    HAL_GPIO_TogglePin(GPIOE, LD9_Pin);
+    HAL_GPIO_TogglePin(GPIOE, LD10_Pin);
 
     /* USER CODE BEGIN 3 */
   }
