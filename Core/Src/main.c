@@ -102,19 +102,18 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  uint16_t toggle_led;
+  toggle_led=LD4_Pin;
   while (1)
   {
     /* USER CODE END WHILE */
     
-    HAL_Delay(1000);
-    HAL_GPIO_TogglePin(GPIOE, LD3_Pin);
-    HAL_GPIO_TogglePin(GPIOE, LD4_Pin);
-    HAL_GPIO_TogglePin(GPIOE, LD5_Pin);
-    HAL_GPIO_TogglePin(GPIOE, LD6_Pin);
-    HAL_GPIO_TogglePin(GPIOE, LD7_Pin);
-    HAL_GPIO_TogglePin(GPIOE, LD8_Pin);
-    HAL_GPIO_TogglePin(GPIOE, LD9_Pin);
-    HAL_GPIO_TogglePin(GPIOE, LD10_Pin);
+    HAL_Delay(300);
+    HAL_GPIO_TogglePin(GPIOE, toggle_led);
+    toggle_led=toggle_led<<1;
+    if (toggle_led==0x0000) {
+      toggle_led=LD4_Pin;
+    }
 
     /* USER CODE BEGIN 3 */
   }
